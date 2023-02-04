@@ -22,7 +22,6 @@ function onStartBtnClick(){
     startBtn.disabled = true;
     stopBtn.disabled = false;
     timerId = setInterval(() =>{
-        isStarted = true;
         currentColor = getRandomHexColor();
         document.body.style.backgroundColor = currentColor;
     }, DELAY)
