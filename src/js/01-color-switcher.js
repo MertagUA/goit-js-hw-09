@@ -19,8 +19,7 @@ startBtn.addEventListener('click', onStartBtnClick);
 stopBtn.addEventListener('click', onStopBtnClick);
 
 function onStartBtnClick(){
-    startBtn.disabled = true;
-    stopBtn.disabled = false;
+    startAndStopBtnsAvailability(true, false);
     timerId = setInterval(() =>{
         currentColor = getRandomHexColor();
         document.body.style.backgroundColor = currentColor;
@@ -28,7 +27,11 @@ function onStartBtnClick(){
 }
 
 function onStopBtnClick(){
-    startBtn.disabled = false;
-    stopBtn.disabled = true;
+    startAndStopBtnsAvailability(false, true);
     clearInterval(timerId);
+}
+
+function startAndStopBtnsAvailability(startBtnAvailability, stopBtnAvailability) {
+    startBtn.disabled = startBtnAvailability;
+    stopBtn.disabled = stopBtnAvailability;
 }
